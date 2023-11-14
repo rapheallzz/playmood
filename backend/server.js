@@ -5,10 +5,9 @@ const dotenv = require('dotenv').config();
 const { errorHandler } = require('./middleware/errorMiddleware');
 const connectDB = require('./config/db');
 const { MongoClient } = require('mongodb');
-const colors = require('colors'); // Moved import to this location
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 // MongoDB Configuration
 const uri = process.env.MONGO_CONNECTION_STRING;
@@ -26,7 +25,7 @@ connectDB()
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
 
-    // Define your routes
+    //  routes
     app.use('/api/top', require('./routes/topRoutes'));
     app.use('/api/users', require('./routes/userRoutes'));
     app.use('/api/fashion', require('./routes/fashionRoutes'));
