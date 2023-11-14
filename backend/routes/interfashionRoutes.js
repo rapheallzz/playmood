@@ -1,13 +1,16 @@
 const express = require('express');
-const router = express.Router()
-const {getInterfashion,
-    postInterfashion,
-    updateInterfashion,
-    deleteInterfashion,
-  } = require('../controllers/interfashionController')
+const router = express.Router();
+const {
+  getInterfashion,
+  postInterfashion,
+  updateInterfashion,
+  deleteInterfashion,
+} = require('../controllers/interfashionController');
 
-  router.route('/').get(getInterfashion).post(postInterfashion)
-  router.route('/:id').put(updateInterfashion).delete(deleteInterfashion)
+// GET all and POST routes
+router.route('/').get(getInterfashion).post(postInterfashion);
 
+// PUT and DELETE routes
+router.route('/:id').put(updateInterfashion).delete(deleteInterfashion);
 
-module.exports = router
+module.exports = router;
