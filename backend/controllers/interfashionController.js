@@ -1,7 +1,7 @@
 
 const asyncHandler = require ('express-async-handler')
 
-const Interfashion = require('../models/interfashionModel')
+const Interfashion = require('../models/InterfashionModel')
 
 // @desc Get Interfashion
 // @route GET /api/interfashion
@@ -59,7 +59,6 @@ const updateInterfashion = asyncHandler(async (req, res) => {
             res.status(400).json({ error: 'Fashion document not found' });
             return;
         }
-
         if (req.body.img) {
             interfashion.img = req.body.img;
         }
