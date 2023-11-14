@@ -64,7 +64,7 @@ const updateInterfashion = asyncHandler(async (req, res) => {
             interfashion.img = req.body.img;
         }
         if (req.body.video) {
-            Interfashion.video = req.body.video;
+            interfashion.video = req.body.video;
         }
         if (req.body.desc) {
             interfashion.desc = req.body.desc;
