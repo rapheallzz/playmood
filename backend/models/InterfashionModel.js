@@ -31,5 +31,4 @@ const interfashionSchema = new mongoose.Schema({
 }
       
 )
-c
 module.exports = mongoose.model('Interfashion', interfashionSchema);
