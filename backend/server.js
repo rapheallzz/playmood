@@ -16,12 +16,17 @@ const client = new MongoClient(uri);
 connectDB()
   .then(() => {
     // Enable CORS
-    app.use(cors());
+    const corsOptions = {
+      origin: 'http://localhost:5173', // Update with your frontend origin
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      credentials: true,
+      optionsSuccessStatus: 204,
+    };
+
+    app.use(cors(corsOptions));
 
     // Middleware for JSON and URL-encoded data
     app.use(express.json());
-    app.use(express.urlencoded({ extended: false }));
-    app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // Routes
